@@ -9,6 +9,7 @@ using ExploreCalifornia.DTOs;
 
 namespace ExploreCalifornia.Controllers
 {
+    [RoutePrefix("api/tour")]
     public class TourController : ApiController
     {
         private AppDataContext _context = new AppDataContext();
@@ -20,6 +21,26 @@ namespace ExploreCalifornia.Controllers
 
             if (freeOnly) query = query.Where(i => i.Price == 0.0m);
             return query.ToList();
+        }
+
+        [Route("{id:int}")]
+        public Tour GetById(int id)
+        {
+            var item = _context.Tours
+                .Where(i => i.TourId == id)
+                .FirstOrDefault();
+
+            return item;
+        }
+
+        [Route("{name}")]
+        public Tour GetByName(string name)
+        {
+            var item = _context.Tours
+                .Where(i => i.Name.Contains(name))
+                .FirstOrDefault();
+
+            return item;
         }
 
         [HttpPost]
