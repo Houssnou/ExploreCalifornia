@@ -3,6 +3,9 @@ using System.Web.Http;
 using System.Web.Http.ExceptionHandling;
 using System.Web.Http.Routing;
 using ExploreCalifornia.Config;
+using ExploreCalifornia.ExceptionHandlers;
+using ExploreCalifornia.Filters;
+using ExploreCalifornia.Loggers;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Newtonsoft.Json;
@@ -29,6 +32,12 @@ namespace ExploreCalifornia
         
         private static void ConfigureWebApi(IAppBuilder app, HttpConfiguration config)
         {
+            config.Services.Replace(typeof(IExceptionLogger), new UnhandledExceptionLogger());
+
+            config.Services.Replace(typeof(IExceptionHandler), new UnhandledExceptionHandler());
+
+            config.Filters.Add(new DBUpdateExceptionFilterAttribute());
+
             config.Formatters.XmlFormatter.UseXmlSerializer = true;
 
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);

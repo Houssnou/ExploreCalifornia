@@ -175,9 +175,13 @@
     <Compile Include="DataAccess\AppDataContext.cs" />
     <Compile Include="DataAccess\Models\AuthorizedApp.cs" />
     <Compile Include="DataAccess\Models\Tour.cs" />
+    <Compile Include="ExceptionHandlers\UnhandledExceptionHandler.cs" />
+    <Compile Include="Filters\DBUpdateExceptionFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HttpActionResults\ErrorContentResult.cs" />
+    <Compile Include="Loggers\UnhandledExceptionLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
