@@ -15,9 +15,15 @@ namespace ExploreCalifornia.Controllers
         private AppDataContext _context = new AppDataContext();
 
         [HttpGet]
-        public List<Tour> GetAllTours([FromUri]bool freeOnly= false)
+        public List<TourDto> GetAllTours([FromUri]bool freeOnly= false)
         {
-            var query = _context.Tours.AsQueryable();
+            var query = _context.Tours
+                .Select(i => new TourDto {
+                    Description = i.Description,
+                    Name = i.Name,
+                    Price = i.Price,
+                    TourId = i.TourId})
+                .AsQueryable();
 
             if (freeOnly) query = query.Where(i => i.Price == 0.0m);
             return query.ToList();

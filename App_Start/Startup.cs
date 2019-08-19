@@ -19,6 +19,10 @@ namespace ExploreCalifornia
         public void Configuration(IAppBuilder app)
         {
             var config = Startup.HttpConfiguration;
+
+            var json = config.Formatters.JsonFormatter.SerializerSettings;
+            json.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+
             ConfigureWebApi(app, config);
         }
 

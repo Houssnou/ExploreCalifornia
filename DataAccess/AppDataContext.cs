@@ -8,7 +8,7 @@ namespace ExploreCalifornia.DataAccess
     {
         public AppDataContext() : base("name=AppDataContext")
         {
-
+            this.Configuration.LazyLoadingEnabled = false;  
         }
 
         public virtual DbSet<AuthorizedApp> AuthorizedApps { get; set; }
