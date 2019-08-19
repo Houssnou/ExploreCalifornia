@@ -14,6 +14,11 @@ namespace ExploreCalifornia.Controllers
     {
         private AppDataContext _context = new AppDataContext();
 
+        /// <summary>
+        /// Gets a list of all tours
+        /// </summary>
+        /// <param name="freeOnly"> show free tours only?</param>
+        /// <returns> List of all matching tours</returns>
         [HttpGet]
         public List<TourDto> GetAllTours([FromUri]bool freeOnly= false)
         {
