@@ -16,6 +16,7 @@ using ExploreCalifornia.Filters;
 
 namespace ExploreCalifornia.Controllers
 {
+    [Authorize]
     public class ReservationController : ApiController
     {
         private AppDataContext db = new AppDataContext();
@@ -27,6 +28,7 @@ namespace ExploreCalifornia.Controllers
         }
 
         // GET: api/Reservation/5
+        [AllowAnonymous]
         [ResponseType(typeof(Reservation))]
         public async Task<IHttpActionResult> GetReservation(int id)
         {
