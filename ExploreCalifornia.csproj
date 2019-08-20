@@ -211,7 +211,9 @@
     <Compile Include="Controllers\AuthorizeController.cs" />
     <Compile Include="Controllers\ReservationController.cs" />
     <Compile Include="DataAccess\Models\Reservation.cs" />
+    <Compile Include="DTOs\AppDto.cs" />
     <Compile Include="DTOs\AuthorizeRequestDto.cs" />
+    <Compile Include="DTOs\TokenDto.cs" />
     <Compile Include="DTOs\TourDto.cs" />
     <Compile Include="DTOs\TourSearchRequestDto.cs" />
     <Compile Include="Config\GlobalConfig.cs" />
@@ -222,9 +224,11 @@
     <Compile Include="ExceptionHandlers\UnhandledExceptionHandler.cs" />
     <Compile Include="Filters\AutoAuthenticationHandler.cs" />
     <Compile Include="Filters\DBUpdateExceptionFilterAttribute.cs" />
+    <Compile Include="Filters\TokenValidationHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\JwtTokenHelper.cs" />
     <Compile Include="HttpActionResults\ErrorContentResult.cs" />
     <Compile Include="Loggers\UnhandledExceptionLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
