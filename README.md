@@ -1,11 +1,11 @@
 # ExploreCalifornia
 Web solution using .Net Web API 2.2
 
-This is a playground for creating Web API using .Net 2.2 following ** Building Web APIs with ASP.NET Web API 2.2** on LinkedIn Learning by * Jonathan "J" Tower *.
+This is a playground for creating Web API using .Net 2.2 following **Building Web APIs with ASP.NET Web API 2.2** on LinkedIn Learning by * Jonathan "J" Tower *.
 
 ### The following are covered in this project:
-    * Convention-based routing
-    * Binding the code to an HTTP request
+    *Convention-based routing
+    *Binding the code to an HTTP request
     * Validating models
     * Using attributes to route requests
     * Customizing attribute routes
@@ -17,9 +17,9 @@ This is a playground for creating Web API using .Net 2.2 following ** Building W
 
 ### Screenshots of the project
 1. List of tours
-  ![SC-1] (SC-001-Tours.JPG)
+  ![SC-1](SC-001-Tours.JPG)
 2. Tour By Id
-  ![SC-1] (SC-002-TourById.JPG)
+  ![SC-1](SC-002-TourById.JPG)
 3. List of reservations
 4. Reservation By Id
 5. API Documentation using Microsoft.AspNet.WebApi.HelpPage nugget package 
